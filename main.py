@@ -1,4 +1,3 @@
-import os
 import streamlit as st
 import openai
 from langchain.chat_models import ChatOpenAI
@@ -10,7 +9,7 @@ from pydub import AudioSegment
 from apikey import OPENAI_API_KEY
 
 
-os.environ['openai_api_key'] = OPENAI_API_KEY
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 # Function to transcribe an audio file using OpenAI's Whisper API
 def transcribe_audio(file_path):
